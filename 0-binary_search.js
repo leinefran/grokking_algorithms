@@ -1,22 +1,21 @@
 #!/usr/bin/node
 /* implementation of Binary Search in JavaScript */
 
-function binary_search(list, item){
+function binary_search (list, item) {
+  let low = 0;
+  let length = list.length;
+  let high = length - 1;
 
-    let low = 0;
-    let length = list.length;
-    let high = length - 1;
-
-    while (low <= high){
-	let mid = (low + high);
-	guess = list[mid]
-	if (guess == item){
+  while (low <= high) {
+    let mid = (low + high);
+    guess = list[mid];
+    if (guess == item) {
 	    return mid;
-	} else if (guess > item){
+    } else if (guess > item) {
 	    high = mid - 1;
-	} else {
+    } else {
 	    low = mid + 1;
-	}
     }
-    return None;
+  }
+  return None;
 }
